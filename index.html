@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV Editor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="toolbar">
+    <h1>CV Editor</h1>
+    <span id="status" class="status" aria-live="polite"></span>
+    <span id="backup" class="backup" data-level="ok"></span>
+    <div class="actions">
+      <button id="btn-docx" class="primary">Export .docx</button>
+      <button id="btn-link" hidden>Link backup file</button>
+      <button id="btn-json">Save backup (.json)</button>
+      <button id="btn-import">Load backup</button>
+      <button id="btn-reset" class="danger">Reset to blank</button>
+      <input id="file-import" type="file" accept="application/json,.json" hidden>
+    </div>
+  </header>
+  <div id="welcome" class="welcome" hidden>
+    <strong>This is a blank template.</strong> To load your own CV, open <em>GitHub backup</em> below, enter your
+    private repository and access token, and click <em>Connect &amp; sync</em>. Or start typing: nothing leaves your browser
+    until you connect.
+  </div>
+  <main>
+    <section id="editor" aria-label="Editor"></section>
+    <section id="preview-pane" aria-label="Preview">
+      <div id="preview" class="page"></div>
+    </section>
+  </main>
+  <script src="vendor/docx.min.js"></script>
+  <script src="data/seed.js"></script>
+  <script src="format.js"></script>
+  <script src="export-docx.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
