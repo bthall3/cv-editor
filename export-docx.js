@@ -47,7 +47,7 @@
       });
     }
     return linesToParagraph(block.lines, {
-      spacing: { after: 120 },
+      spacing: { after: block.tight ? 0 : 120 },
       indent: block.hanging ? { left: HANGING, hanging: HANGING } : undefined,
     });
   }

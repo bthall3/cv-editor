@@ -104,7 +104,8 @@
           for (const e of sec.entries) blocks.push({ type: 'para', lines: [plain(e.text)] });
           break;
         case 'list':
-          for (const e of sec.entries) blocks.push({ type: 'para', lines: [plain(e.text)] });
+          // Single-spaced: no gap between items (affiliations, skills).
+          for (const e of sec.entries) blocks.push({ type: 'para', lines: [plain(e.text)], tight: true });
           break;
         case 'dated':
           blocks.push({

@@ -160,3 +160,5 @@ textarea { resize: vertical; min-height: 2.4em; }
 .welcome[hidden] { display: none; }
 
 .add-top { margin-bottom: 10px; }
+
+.page p.tight { margin: 0; }

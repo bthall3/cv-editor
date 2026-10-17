@@ -725,7 +725,7 @@
             el('td', {}, el('p', {}, r.date)),
             el('td', {}, r.lines.map(l => el('p', {}, l)))))));
       }
-      default: return el('p', { class: b.hanging ? 'hanging' : '' }, linesToNodes(b.lines));
+      default: return el('p', { class: [b.hanging && 'hanging', b.tight && 'tight'].filter(Boolean).join(' ') }, linesToNodes(b.lines));
     }
   }
 
