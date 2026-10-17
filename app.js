@@ -643,6 +643,8 @@
       el('summary', {}, sec.title || '(untitled)',
         el('span', { class: 'count' }, `${sec.entries.length} ${sec.entries.length === 1 ? 'entry' : 'entries'}${sec.hidden ? ' · hidden' : ''}`)),
       el('div', { class: 'section-body' },
+        el('div', { class: 'add-row add-top' },
+          el('button', { class: 'primary', onclick: () => addEntry(sec, 'start') }, '+ Add entry')),
         el('div', { class: 'section-tools' },
           el('label', { class: 'field' }, 'Section title',
             el('input', { type: 'text', value: sec.title, oninput: ev => { sec.title = ev.target.value; save(); } })),
@@ -660,7 +662,6 @@
           } }, 'Delete section')),
         sec.entries.map((_, i) => entryCard(sec, i)),
         el('div', { class: 'add-row' },
-          el('button', { onclick: () => addEntry(sec, 'start') }, '+ Add entry at top'),
           el('button', { onclick: () => addEntry(sec, 'end') }, '+ Add entry at bottom'))));
     details.addEventListener('toggle', () => {
       if (details.open) openSections.add(sec.id); else openSections.delete(sec.id);

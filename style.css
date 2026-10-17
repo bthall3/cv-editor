@@ -158,3 +158,5 @@ textarea { resize: vertical; min-height: 2.4em; }
 
 .welcome { background: #eff6ff; border: 1px solid #bfdbfe; color: #1e3a8a; border-width: 0 0 1px; border-radius: 0; padding: 8px 16px; font-size: 13px; }
 .welcome[hidden] { display: none; }
+
+.add-top { margin-bottom: 10px; }
